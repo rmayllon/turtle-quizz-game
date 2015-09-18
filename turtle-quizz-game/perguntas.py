@@ -1,19 +1,23 @@
-﻿import time
+﻿# -*- coding: utf-8 -*-
+import time
 import sys
 from random import *
 
 def p1():
-    print " Como as enzimas se reproduzem? \na)Fica uma enzima da outra \nb)Nao se reproduzem \nc) Reproduzem por osmose \nd)Nenhuma das alternativas \n"
-    r1 = raw_input ("Digite sua resposta \n")
-    if (r1 == "a"):
-        print "Acerto mizeravi \n \n"
-    
-    else:
-        print "ERRROOW \n \n"
-        
-        
+    print """
+          Como as enzimas se reproduzem?
+          a)Fica uma enzima da outra
+          b)Nao se reproduzem
+          c)Reproduzem por osmose
+          d)Nenhuma das alternativas
+          """
+    resposta = raw_input("Qual é a resposta correta?")
+    print(True if resposta == "a" else False)
+
+
 def p2():
-    print 'Por que a vaca foi para o espaço? \na)Porque ela quis \nb)Para se encontrar com o vacuo \nc)MUUUUUU \nd)Nenhuma das alternativas \n'
+    print 'Por que a vaca foi para o espaço? \na)Porque ela quis \nb)Para se encontrar com o vacuo \nc)' \
+          'MUUUUUU \nd)Nenhuma das alternativas \n'
     r2 = raw_input ("Digite sua resposta \n")
     if (r2 == 'b'):
         print "Acerto mizeravi \n"
@@ -69,7 +73,9 @@ def p8():
         print "ERRROOW \n"
         
 def p9():
-    print "Segundo a Reinheitsgebot (Lei da Pureza da Cerveja), quais ingredientes podem ser utilizados na utilizacao da cerveja? \na)Agua, malte e lupulo \nb)Agua, malte, lupulo e levedura \nc)Agua, malte, lupulo, levedura e conservantes \nd)Agua, malte, lupulo e cereais nao maltados\n"
+    print "Segundo a Reinheitsgebot (Lei da Pureza da Cerveja), quais ingredientes podem " \
+          "ser utilizados na utilizacao da cerveja? \na)Agua, malte e lupulo \nb)Agua, malte, lupulo e levedura" \
+          " \nc)Agua, malte, lupulo, levedura e conservantes \nd)Agua, malte, lupulo e cereais nao maltados\n"
     r9 = raw_input ("Digite sua resposta \n")
     if (r9 == 'b'):
         print "Acerto mizeravi \n"
@@ -85,7 +91,8 @@ def p10():
         print "ERRROOW \n"
         
 def p11():
-    print "Com relacao ao diametro, podemos afirmar que Jupiter e ____ do nosso sistema solar:\na)O menor planeta. \nb)O maior planeta. \nc)O planeta mais vivo. \nd)Ultimo planeta.\n"
+    print "Com relacao ao diametro, podemos afirmar que Jupiter e ____ do nosso sistema solar:\na)" \
+          "O menor planeta. \nb)O maior planeta. \nc)O planeta mais vivo. \nd)Ultimo planeta.\n"
     r11 = raw_input ("Digite sua resposta \n")
     if (r11 == 'b'):
         print "Acerto mizeravi \n"
@@ -392,11 +399,6 @@ def p45():
         print "Acertou"
     else:
         print "ERROOW"
-
-lp= [p1(),p2(),p3(),p4(),p5(),p6(),p7(),p8(),p9(),p10(),p11(),p12(),p13(),p14(),p15(),p16(),p17(),p18(),p19(),p20(),p21(),p22(),p23(),p24(),p25(),p26(),p27(),p28(),p29(),p30(),p31(),p32(),p33(),p34(),p35(),p36(),p37(),p38(),p39(),p40(),p41(),p42(),p43(),p44(),p45()]
-
-lq = []
-
 
 
 ###for i in range(10):
