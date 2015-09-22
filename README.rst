@@ -9,7 +9,7 @@ turtle-quizz-game
    :target: https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal
    :alt: Latest Travis CI build status
 
-o turtle quizz game e um jogo e perguntas eobjtevias onde a cada pergunta respondida corretamente, ira automaticamente avancar para a proxima pergunta ate finalizar a fase, e caso a pergunta seja respondidaa de maneira incorreta ira voltar para o comeco do jogo.
+o turtle quizz game e um jogo de perguntas objtevias onde a cada pergunta respondida corretamente, ira automaticamente avancar para a proxima pergunta ate finalizar a fase, e caso a pergunta seja respondidaa de maneira incorreta ira voltar para o comeco do jogo. Utilizando como layout o turtle, criamos um caminho onde cada parada da tartaruga interativa, respresentará uma pergunta, que sera acessada atraves de um banco de perguntas criadas separadamente e escolhidas de maneiras aleatorias.  
 
 Usage
 -----
