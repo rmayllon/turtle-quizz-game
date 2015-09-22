@@ -5,64 +5,51 @@ import perguntas
 from random import randint
 
 def get_nome_pergunta():
+    """
+    Abre o arquivo de perguntas, pega os nomes das funções e retorna em uma lista
+    """
     nome = []
     file = open('perguntas.py')
-    for linha in file:
-        if 'def' in linha:
-            nome.append(linha.split()[1].split("(")[0])
+    [nome.append(linha.split()[1].split("(")[0]) if 'def' in linha else linha for linha in file]
+    file.close()
     return nome
 
 
 def main():
     """
-    Comentário do método main
-
+    Carrega o tabuleiro, carrega as configurações iniciais, analisa as jogadas e apresenta os resultados.
     """
-    rand = randint(0, len(get_nome_pergunta()))
-    Pergunta = getattr(perguntas, 'p'+str(rand))
+    #incializando o tabuleiro e definindo a tartaruga
+    bgpic("resource/mapa.gif")
+    shape("turtle")
+    fillcolor("purple")
+    turtlesize(3)
+    penup()
 
-    if Pergunta():
-        goto(-320, -215)
-    else:
-        goto(-320, -215)
-        break
-
-    # bgpic("resource/mapa.gif")
-    #
-    # shape("turtle")
-    #
-    # fillcolor("purple")
-    #
-    # turtlesize(2)
-    #
-    # penup()
-    # # bolinha 01
-    # time.sleep(10)
-    #
-    # goto(-320, -215)
-    #
-    # # bolinha 02
-    # goto(-90, -225)
-    #
-    # # bolinha 03
-    # goto(140, -230)
-    #
-    # # bolinha 04
-    # goto(325, -135)
-    #
-    # # bolinha 05
-    # goto(310, 110)
-    #
-    # # bolinha 06
-    # goto(125, 230)
-    #
-    # # bolinha 07
-    # goto(-120, 220)
-    #
-    # # bolinha 08
-    # goto(-330, 300)
-
-if __name__ == "__main__":
+    #configuração inicial do jogo
+    x = y = -250
+    erro = acerto = 0
+    rodando = True
+    max_tentativas = 10
+    
+    #coloca a tartaruga na posicao incial e chama as perguntas
+    goto(x, y)
+    while rodando:
+        Pergunta = getattr(perguntas, 'pergunta'+str(randint(1, len(get_nome_pergunta())-1)));
+        if Pergunta():
+            x += 100; y += 100; acerto += 1
+        else:
+            y = x = -220; erro += 1
+        goto(x, y);
+        print("quantidade de jogadas ate agora = %s\ncertas = %s\nerradas = %s\n" % (acerto+erro, acerto, erro))
+        rodando = False if acerto+erro == max_tentativas else rodando
+    
+    #finalizando o jogo, apresentação de pontos e opção de reinicio
+    print("Voce atingiu a quantidade maxima de %s jogadas \n%s certas \n%s erradas\n" % (max_tentativas, acerto, erro)) 
+    op = raw_input(u'Gostaria de jogar novamente? |sim|nao|: ')
+    if op == 'sim': main()
+    
+if __name__ == "__main__": 
     main()
 
 
